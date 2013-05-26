@@ -151,6 +151,15 @@ describe("Snix", function(){
 
     });
 
+    it("can sort numbers", function(){
+      var jsArray = [{id:1},{id:3},{id:2}]
+      var snixArray = Snix.array(jsArray)
+      snixArray.sort("id")
+      expect(snixArray()[0]).toEqual({id:1})
+      expect(snixArray()[1]).toEqual({id:2})
+      expect(snixArray()[2]).toEqual({id:3})
+    });
+
     it("triggers a change event on sorting", function(){
       var joe = {name:"joe"}, bob = {name:"bob"};
       var arr = Snix.array([joe, bob]);
